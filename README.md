@@ -25,4 +25,6 @@ Then open 2 browsers at http://localhost:3000
 2. The server broadcasts the event (sends the event to every socket but the one that sent it). 
 3. Finally, the event is received by other clients, and processed with Paper.js in the same way as it was processed in the client that emitted the message.
 
+## Next
 
+* Use Redis to save all the events, in case a new user joins.

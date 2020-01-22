@@ -25,16 +25,15 @@ window.onload = () => {
             socket.emit('paperEvent', {
                 type: event.type,
                 point: event.point,
-                emitted: true,
             });
         }
     }
 
     socket.on('paperEvent', (event) => {
-        event.point = new Point(event.point[1],
-            event.point[2]);
+        event.point = new Point(event.point[1], event.point[2]);
+        event.emitted = true;
         processEvent(event);
-    })
+    });
 
     tool = new Tool();
     tool.onMouseDown = processEvent;
